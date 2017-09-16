@@ -1,0 +1,14 @@
+.idea
+.vscode
+tags
+.DS_Store
+.DS_Store?
+*.DS_Store
+*/.DS_Store
+**/.DS_Store
+Thumbs.db
+tags
+
+.sass-cache
+node_modules
+npm-debug.log*
