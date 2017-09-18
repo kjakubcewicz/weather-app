@@ -12,12 +12,10 @@
     </div>
     <div class="row main">
       <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="well">
-          <h3>Weather from Apixu API</h3>
-          <div id="apixu">
-
-          </div>
-        </div>
+        {% block forecast %}
+          {{ forecast }}
+          {% include 'forecast.twig' %}
+        {% endblock block %}
       </div>
     </div>
   </div>
