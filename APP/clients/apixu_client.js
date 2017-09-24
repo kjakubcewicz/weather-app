@@ -11,12 +11,17 @@ var options = {
 
 exports.currentWeather = function currentWeather(query, callback){
 	options.path = '/v1/current.json?key=' + apiKey + '&q=' + query;
-	http.request(options, function(res) {
-	  res.setEncoding('utf8');
-	  res.on('data', function (chunk) {
-		console.log(chunk);
+	http.request(options, function(apixuRes) {
+		var data = '';
+	  apixuRes.setEncoding('utf8');
+	  apixuRes.on('data', function (chunk) {
+			console.log(chunk);
+			data += chunk;
 	  });
-	  res.on('end', function (chunk) {
+	  apixuRes.on('end', function (chunk) {
+			// var apixuData = JSON.parse(data);
+			// callback(apixuData);
+			callback(data);
 	  });
 	}).on('error', function(err) {
         // handle errors with the request itself
@@ -27,12 +32,12 @@ exports.currentWeather = function currentWeather(query, callback){
 
 exports.forecastWeather = function forecastWeather(query, noOfDays, callback){
 	options.path = '/v1/forecast.json?key=' + apiKey + '&q=' + query + '&days=' + noOfDays;
-	http.request(options, function(res) {
-	  res.setEncoding('utf8');
-	  res.on('data', function (chunk) {
+	http.request(options, function(apixu_res) {
+	  apixu_res.setEncoding('utf8');
+	  apixu_res.on('data', function (chunk) {
 		console.log(chunk);
 	  });
-	  res.on('end', function (chunk) {
+	  apixu_res.on('end', function (chunk) {
 	  });
 	}).on('error', function(err) {
         // handle errors with the request itself
