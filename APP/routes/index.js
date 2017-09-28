@@ -20,14 +20,14 @@ router.get('/', function(req, res, next) {
     
     res.render('index', {
       vendor_apixu: 'Weather from Apixu API',
-      forecast: data.location.name + ' ' + data.location.region,
-      name: data.location.name,
-      country: data.location.country,
+      condition_icon: data.current.condition.icon,
+      condition_description: data.current.condition.text,
       temp_c: data.current.temp_c,
       wind_kph: data.current.wind_kph,
       humidity: data.current.humidity,
-      condition_description: data.current.condition.text,
-      condition_icon: data.current.condition.icon,
+      name: data.location.name,
+      country: data.location.country,
+      update: data.current.last_updated,
       vendor_zupa: 'Zupa',
       vendor_zupa2: 'Zupa2'
     });

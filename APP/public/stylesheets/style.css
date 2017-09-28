@@ -34,3 +34,7 @@ body {
   font-weight: 600;
   margin-top: 10px;
   margin-bottom: 10px; }
+
+.forecast__timestamp {
+  width: 100%;
+  font-size: 10px; }
