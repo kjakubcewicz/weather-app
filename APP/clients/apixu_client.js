@@ -15,7 +15,7 @@ exports.currentWeather = function currentWeather(query, callback){
 		var data = '';
 	  apixuRes.setEncoding('utf8');
 	  apixuRes.on('data', function (chunk) {
-			console.log(chunk);
+			// console.log(chunk);
 			data += chunk;
 	  });
 	  apixuRes.on('end', function (chunk) {

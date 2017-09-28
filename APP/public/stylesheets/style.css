@@ -6,3 +6,31 @@ body {
   padding-top: 60px;
   padding-bottom: 60px;
   min-height: 80vh; }
+
+.forecast__inner {
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 5px; }
+
+.forecast__condition {
+  flex: 1;
+  margin-bottom: 20px; }
+
+.forecast__numeric {
+  flex: 1;
+  margin-bottom: 20px;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.forecast__temp {
+  font-size: 40px; }
+
+.forecast__location {
+  width: 100%;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 10px; }

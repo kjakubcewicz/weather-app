@@ -12,7 +12,22 @@
     </div>
     <div class="row main">
       <div class="col-xs-12 col-sm-6 col-md-4">
-        {% block forecast %}
+        {% block forecast_apixu %}
+          {% set vendor = vendor_apixu %}
+          {% include 'forecast.twig' %}
+        {% endblock block %}
+      </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        {% block forecast_zupa %}
+          {% set vendor = vendor_zupa %}
+          {% include 'forecast.twig' %}
+        {% endblock block %}
+      </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        {% block forecast_zupa2 %}
+          {% set vendor = vendor_zupa2 %}
           {% include 'forecast.twig' %}
         {% endblock block %}
       </div>

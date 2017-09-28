@@ -8,3 +8,38 @@ body {
   padding-bottom: 60px;
   min-height: 80vh;
 }
+
+.forecast {
+  &__inner {
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 5px;
+  }
+
+  &__condition {
+    flex: 1;
+    margin-bottom: 20px;
+  }
+
+  &__numeric {
+    flex: 1;
+    margin-bottom: 20px;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__temp {
+    font-size: 40px;
+  }
+
+  &__location {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
