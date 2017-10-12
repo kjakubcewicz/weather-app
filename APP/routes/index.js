@@ -6,14 +6,15 @@ var util = require('util');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   var apixuData = {};
-
   var getApixuData = function(data) {
     var apixuData = JSON.parse(data);
 
     renderReceivedData(apixuData);
-  }
+  };
 
-  apixu.currentWeather(20500, getApixuData);
+  //console.log('City: ' + req.query['City']); - TODO: check possibility of catch data from req
+
+  apixu.currentWeather('Wroclaw', getApixuData);
 
   function renderReceivedData(data) {
     console.log(util.inspect(data, false, null));
