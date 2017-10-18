@@ -1,6 +1,6 @@
 http = require('http');
 
-var apiKey = 'cacdf29dc2be47d484a105606152306'
+var apiKey = 'd55720605272470a8f4142704171810';
 
 var options = {
   host: 'api.apixu.com',
@@ -25,7 +25,7 @@ exports.currentWeather = function currentWeather(query, callback){
         console.error('Error with the request:', err.message);
         callback(err);
     }).end();
-}
+};
 
 exports.forecastWeather = function forecastWeather(query, noOfDays, callback){
 	options.path = '/v1/forecast.json?key=' + apiKey + '&q=' + query + '&days=' + noOfDays;
