@@ -2,10 +2,11 @@ var apixu = require('../clients/apixu_client');
 
 exports.getHomePage = function (req, res) {
   req.checkQuery('city', 'City not provided').notEmpty();
+  req.sanitizeQuery('city').trim();
   var errors = req.validationErrors();
 
   if (errors) {
-    var errorMessages = errors.map(function(error) {
+    var errorMessages = errors.map(function (error) {
       return error.msg + '<br>';
     });
     res.render('index', {
