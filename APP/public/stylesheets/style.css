@@ -1,0 +1,52 @@
+body {
+  font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+  font-size: 15px; }
+
+.wrapper {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  min-height: 80vh; }
+
+.messages {
+  color: #cc3300; }
+
+.city-picker {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .city-picker__input {
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 10px; }
+
+.forecast__inner {
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 5px; }
+
+.forecast__condition {
+  flex: 1;
+  margin-bottom: 20px; }
+
+.forecast__numeric {
+  flex: 1;
+  margin-bottom: 20px;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.forecast__temp {
+  font-size: 40px; }
+
+.forecast__location {
+  width: 100%;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+.forecast__timestamp {
+  width: 100%;
+  font-size: 10px; }

@@ -1,0 +1,51 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+  <div class="container wrapper">
+    <h1>Weather app</h1>
+    <div class="jumbotron city-picker">
+      <form id="forecast_query">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 text-center city-picker__form">
+            <h2>Enter a city name to receive a forecast:</h2>
+            <input type="text" placeholder="City name (no special characters)" name="city" class="city-picker__input js-query-input" value="{{ city }}">
+            <button type="submit" class="btn btn-primary" id="forecast_query" class="city-picker__submit">Show me the weather!</button>
+          </div>
+          <div class="col-xs-12 col-sm-6 text-center city-picker__localize">
+            <h2>...or let us locate you:</h2>
+            <button type="button" class="btn btn-info" id="current_location">Show weather for my location</button>
+          </div>
+        </div>
+      </form>
+      {% if message %}
+      <div class="messages">
+        <p>{{ message }}</p>
+      </div>
+      {% endif %}
+    </div>
+    <div class="row main">
+      {% if temp_c is defined %}
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          {% block forecast_apixu %}
+            {% set vendor = vendor_apixu %}
+            {% include 'forecast.twig' %}
+          {% endblock block %}
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          {% block forecast_zupa %}
+            {% set vendor = vendor_zupa %}
+            {% include 'forecast.twig' %}
+          {% endblock block %}
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          {% block forecast_zupa2 %}
+            {% set vendor = vendor_zupa2 %}
+            {% include 'forecast.twig' %}
+          {% endblock block %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

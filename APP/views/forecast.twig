@@ -1,0 +1,16 @@
+<div class="well forecast text-center">
+    <h3 class="forecast__title">{{ vendor }}</h3>
+    <div id="{{ vendor }}" class="forecast__inner">
+      <div class="forecast__condition">
+        <img class="forecast__icon" src="{{ condition_icon }}" alt="{{ condition_description }}">
+        <div class="forecast__description">{{ condition_description }}</div>
+      </div>
+      <div class="forecast__numeric">
+        <div class="forecast__temp"><b>{{ temp_c }} &deg;C</b></div>
+        <div class="forecast__wind-speed">Wind speed: <b>{{ wind_kph }} km/h</b></div>
+        <div class="forecast__humidity">Humidity: <b>{{ humidity }}%</b></div>
+      </div>
+      <div class="forecast__location">{{ name }}, {{ country }}</div>
+      <div class="forecast__timestamp">Updated on: {{ update }} (local time)</div>
+    </div>
+  </div>
