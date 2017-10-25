@@ -3,7 +3,7 @@ var apixu = require('../clients/apixu_client');
 exports.getHomePage = function (req, res) {
   req.checkQuery('city', 'City not provided').notEmpty();
   req.sanitizeQuery('city').trim();
-  // req.sanitizeQuery('city').escape();
+  req.sanitizeQuery('city').escape();
   var errors = req.validationErrors();
   console.log(errors);
 
