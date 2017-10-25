@@ -3,7 +3,9 @@ var apixu = require('../clients/apixu_client');
 exports.getHomePage = function (req, res) {
   req.checkQuery('city', 'City not provided').notEmpty();
   req.sanitizeQuery('city').trim();
+  // req.sanitizeQuery('city').escape();
   var errors = req.validationErrors();
+  console.log(errors);
 
   if (errors) {
     res.render('index', {
@@ -27,17 +29,10 @@ exports.getHomePage = function (req, res) {
   apixu.currentWeather(city, getApixuData);
 
   function renderReceivedData(data) {
-
+    console.log(data)
     res.render('index', {
       vendor_apixu: 'Weather from Apixu API',
-      condition_icon: data.current.condition.icon,
-      condition_description: data.current.condition.text,
-      temp_c: data.current.temp_c,
-      wind_kph: data.current.wind_kph,
-      humidity: data.current.humidity,
-      name: data.location.name,
-      country: data.location.country,
-      update: data.current.last_updated,
+      apixu_data: data,
       vendor_zupa: 'Zupa',
       vendor_zupa2: 'Zupa2',
       city: city
