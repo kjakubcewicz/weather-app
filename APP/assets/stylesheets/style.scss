@@ -3,6 +3,17 @@ body {
   font-size: 15px;
 }
 
+.wrapper {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  min-height: 80vh;
+}
+
+.messages {
+  color: #cc3300;
+  padding-top: 40px;
+}
+
 .city-picker {
   display: flex;
   flex-direction: column;
@@ -13,12 +24,6 @@ body {
     max-width: 350px;
     margin-bottom: 10px;
   }
-}
-
-.wrapper {
-  padding-top: 60px;
-  padding-bottom: 60px;
-  min-height: 80vh;
 }
 
 .forecast {
