@@ -5,7 +5,6 @@ exports.getHomePage = function (req, res) {
   req.sanitizeQuery('city').trim();
   req.sanitizeQuery('city').escape();
   var errors = req.validationErrors();
-  console.log(errors);
 
   if (errors) {
     res.render('index', {
@@ -29,7 +28,6 @@ exports.getHomePage = function (req, res) {
   apixu.currentWeather(city, getApixuData);
 
   function renderReceivedData(data) {
-    console.log(data)
     res.render('index', {
       vendor_apixu: 'Weather from Apixu API',
       apixu_data: data,
