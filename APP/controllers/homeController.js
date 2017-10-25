@@ -6,14 +6,11 @@ exports.getHomePage = function (req, res) {
   var errors = req.validationErrors();
 
   if (errors) {
-    var errorMessages = errors.map(function (error) {
-      return error.msg + '<br>';
-    });
     res.render('index', {
       vendor_apixu: 'Weather from Apixu API',
       vendor_zupa: 'Zupa',
       vendor_zupa2: 'Zupa2',
-      message: errorMessages
+      errors: errors
     });
 
     return;

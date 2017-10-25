@@ -17,9 +17,11 @@
           </div>
         </div>
       </form>
-      {% if message %}
+      {% if errors %}
       <div class="messages">
-        <p>{{ message }}</p>
+      {% for error in errors %}
+        <p>{{ error.msg }}</p>
+      {% endfor %}
       </div>
       {% endif %}
     </div>
